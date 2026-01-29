@@ -1,4 +1,4 @@
-const BASE_URL =  "https://live-polling-opal.vercel.app"; 
+const BASE_URL = "https://live-polling-0v88.onrender.com"; 
 
 export const api = {
   createPoll: async () => {
