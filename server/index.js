@@ -34,13 +34,11 @@ socketHandler(io);
 
 const PORT = process.env.PORT || 5000;
 
-if (process.env.NODE_ENV !== "production") {
-  server.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-    console.log(`Environment: ${NODE_ENV}`);
-    console.log(`ROOM_KEY: ${ROOM_KEY}`);
-  });
-}
+server.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+  console.log(`Environment: ${NODE_ENV}`);
+  console.log(`ROOM_KEY: ${ROOM_KEY}`);
+});
 
 
 module.exports = app;
