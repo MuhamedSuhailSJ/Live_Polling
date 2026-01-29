@@ -7,8 +7,8 @@ const path = require("path");
 const pollRoutes = require("./src/routes/pollRoutes");
 const socketHandler = require("./src/socket/socketHandler");
 
+const ROOM_KEY = process.env.ROOM_KEY || "default-room";
 const NODE_ENV = process.env.NODE_ENV || "development";
-
 
 const app = express();
 const server = http.createServer(app);
