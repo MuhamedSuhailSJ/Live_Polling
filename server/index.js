@@ -7,7 +7,6 @@ const path = require("path");
 const pollRoutes = require("./src/routes/pollRoutes");
 const socketHandler = require("./src/socket/socketHandler");
 
-const PORT = process.env.PORT || 5000;
 const NODE_ENV = process.env.NODE_ENV || "development";
 
 
@@ -33,17 +32,15 @@ app.use("/api/poll", pollRoutes(io));
 socketHandler(io);
 
 
-if (NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../client/build")));
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../client/build", "index.html"));
+const PORT = process.env.PORT || 5000;
+
+if (process.env.NODE_ENV !== "production") {
+  server.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+    console.log(`Environment: ${NODE_ENV}`);
+    console.log(`ROOM_KEY: ${ROOM_KEY}`);
   });
 }
 
-
-server.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-  console.log(`Environment: ${NODE_ENV}`);
-});
 
 module.exports = app;
