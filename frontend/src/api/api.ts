@@ -1,4 +1,4 @@
-const BASE_URL = "https://live-polling-opal.vercel.app"; // Or process.env.REACT_APP_API_URL
+const BASE_URL = "https://live-polling-opal.vercel.app/"; 
 
 export const api = {
   createPoll: async () => {
