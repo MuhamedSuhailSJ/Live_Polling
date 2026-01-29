@@ -1,6 +1,6 @@
 import { io, Socket } from "socket.io-client";
 
-const SOCKET_URL = "https://live-polling-opal.vercel.app/";
+const SOCKET_URL = "https://live-polling-opal.vercel.app";
 
 class SocketManager {
   public socket: Socket | null = null;
